@@ -1,18 +1,3 @@
-// Через замыкание
-function make(...arg0) {
-    let argArray = [];
-    let func = (...arr) => {
-        if (typeof arr[0] === 'function') {
-            return argArray.reduce(arr[0]);
-        }
-        else {
-    	    argArray.push(...arr);
-	        return func;
-        }
-    };
-    return func(...arg0);
-}
-/*
 function make(...arr) {
     let len = arr.length;
     if (typeof arr[len - 1] === 'function') {
@@ -22,7 +7,7 @@ function make(...arr) {
 	    return make.bind(null, ...arr);
     }
 }
-*/
+
 function sum(a, b) {
     return a + b;
 }
